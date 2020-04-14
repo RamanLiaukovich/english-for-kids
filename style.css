@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar {
+    position: relative;
+    margin: 40px auto auto 10%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.nav-bar span,
+.nav-bar span::after,
+.nav-bar span::before {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: grey;
+    border-radius: 2px;
+    top: calc(50% - 4px);
+}
+
+.nav-bar span::after {
+    content: "";
+    top: -10px;
+    transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar span::before {
+    content: "";
+    top: 10px;
+    transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar.active span {
+    background: none;
+    transition-duration: 0.2s;
+}
+
+.nav-bar.active span::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.nav-bar.active span::before {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.menu {
+    width: 320px;
+    height: 100vh;
+    position: absolute;
+    background: red;
+    top: 0;
+    left: -320px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-content: center;
+    transition: left 0.5s ease-out;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+}
+
+.menu a:hover {
+    color: orange;
+}
+
+.switcher {
+    height: 40px;
+    width: 120px;
+    background: orange;
+    margin: 40px 10% auto auto;
+    border-radius: 5px;
+}
+
+/* .switcher-input {
+    opacity: 0;
+} */
+
+.switcher-text {
+    width: 100%;
+    height: 100%;
+}
