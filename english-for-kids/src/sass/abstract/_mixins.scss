@@ -1,0 +1,8 @@
+@mixin font ($size, $weigth) {
+    font-size: $size;
+    font-weight: $weigth;    
+}
+
+@mixin media-laptop {
+    @media (max-width: $content-width) { @content; }
+}

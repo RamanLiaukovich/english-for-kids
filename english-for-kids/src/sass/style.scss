@@ -1,0 +1,13 @@
+@import "abstract/constants";
+@import "abstract/mixins.scss";
+@import "abstract/placeholders.scss";
+@import "base/base.scss";
+
+//Layouts
+@import "layouts/header.scss";
+
+//Components
+@import "component/menu.scss";
+@import "component/switch.scss";
+@import "component/card.scss";
+@import "component/categorycard.scss";

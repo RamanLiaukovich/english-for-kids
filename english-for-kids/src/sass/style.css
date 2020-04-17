@@ -1,0 +1,233 @@
+#checkbox:checked ~ .switcher-text::before, .switcher-text::before, .menu a {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  margin-top: 30px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar {
+  position: relative;
+  margin: 40px auto auto 10%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.nav-bar span,
+.nav-bar span::after,
+.nav-bar span::before {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: #fff067;
+  border-radius: 2px;
+  top: calc(50% - 4px);
+}
+
+.nav-bar span::after {
+  content: "";
+  top: -10px;
+  transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar span::before {
+  content: "";
+  top: 10px;
+  transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar.active span {
+  background: none;
+  transition-duration: 0.2s;
+}
+
+.nav-bar.active span::after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.nav-bar.active span::before {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.menu {
+  width: 320px;
+  height: 100vh;
+  position: absolute;
+  background: #5eb5b1;
+  top: 0;
+  left: -320px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  place-content: center;
+  transition: left 0.5s ease-out;
+  z-index: 22;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.menu a:hover {
+  color: #fff067;
+}
+
+.switcher {
+  height: 40px;
+  width: 120px;
+  background: #5eb5b1;
+  margin: 40px 10% auto auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.switcher-input {
+  display: none;
+}
+
+.switcher-text {
+  height: 36px;
+  width: 116px;
+  position: absolute;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.switcher-text::before {
+  content: attr(data-on);
+  margin: 4px 0 auto 4px;
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.switcher-box {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff067;
+  top: 44px;
+  right: calc((100% - 1120px) / 2 + 118px);
+  border: white 1px solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px white;
+  transition: right 0.3s ease-in;
+}
+@media (max-width: 1120px) {
+  .switcher-box {
+    right: 10.6%;
+  }
+}
+
+.switcher-box::after {
+  position: absolute;
+  background: red;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+#checkbox:checked ~ .switcher-text {
+  background: #ffb343;
+}
+
+#checkbox:checked ~ .switcher-text::before {
+  content: attr(data-off);
+  margin: 4px 0 auto 41px;
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#checkbox:checked ~ .switcher-box {
+  right: calc((100% - 1120px) / 2 + 195px);
+}
+@media (max-width: 1120px) {
+  #checkbox:checked ~ .switcher-box {
+    right: calc(10.6% + 80px);
+  }
+}
+
+/* main container */
+.main-container {
+  width: 100%;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background: #5eb5b1;
+  margin: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0px 0px 40px 2px #fff067;
+}
+.card img {
+  width: 220px;
+  border: 1px solid #fff067;
+  border-radius: 5px;
+  margin-top: -21px;
+}
+.card h1 {
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  margin-top: 10px;
+}
+
+.play {
+  background: #ffb343;
+}
+.play:hover {
+  box-shadow: 0px 0px 40px 0px #fff067;
+}
+
+.category-card {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background: white;
+  margin: 20px;
+  text-align: center;
+  border: 2px solid #fff067;
+  border-radius: 5px;
+}
+.category-card:hover {
+  box-shadow: 0px 0px 40px -15px #5eb5b1;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,77 @@
+.nav-bar {
+    position: relative;
+    margin: 40px auto auto 10%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.nav-bar span,
+.nav-bar span::after,
+.nav-bar span::before {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: $color-train;
+    border-radius: 2px;
+    top: calc(50% - 4px);
+}
+
+.nav-bar span::after {
+    content: "";
+    top: -10px;
+    transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar span::before {
+    content: "";
+    top: 10px;
+    transition: top 0.3s, transform 0.7s;
+}
+
+.nav-bar.active span {
+    background: none;
+    transition-duration: 0.2s;
+}
+
+.nav-bar.active span::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.nav-bar.active span::before {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.menu {
+    width: 320px;
+    height: 100vh;
+    position: absolute;
+    background: $color-brand;
+    top: 0;
+    left: -320px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-content: center;
+    transition: left 0.5s ease-out;
+    z-index: 22;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu a {
+    @extend %font-add;
+    text-decoration: none;
+    color: $color-tags;
+    margin: 5px;
+    @include font(30px, 900);
+}
+
+.menu a:hover {
+    color: $color-train;
+}

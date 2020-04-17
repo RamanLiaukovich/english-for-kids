@@ -1,0 +1,22 @@
+{
+  "name": "raman",
+  "version": "1.0.0",
+  "description": "english-for-kids",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "style": "sass --watch english-for-kids/src/sass/style.scss english-for-kids/src/sass/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/ramanliaukovich-RS2020Q1.git"
+  },
+  "author": "Raman Liaukovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/ramanliaukovich-RS2020Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/ramanliaukovich-RS2020Q1#readme"
+}

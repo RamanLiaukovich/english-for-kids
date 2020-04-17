@@ -1,0 +1,35 @@
+.card {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    background: $color-brand;
+    margin: 30px 20px;
+    text-align: center;
+    cursor: pointer;    
+
+    &:hover {
+        box-shadow: 0px 0px 40px 2px $color-train;
+    }
+
+    img {
+        width: 220px;
+        border: 1px solid $color-train;
+        border-radius: 5px;
+        margin-top: -21px;
+    }
+
+    h1 {
+        font-family: 'Cabin Sketch', 'Roboto', cursive;
+        margin-top: 10px;
+    }
+
+    
+}
+
+.play {
+        background: $color-play;
+
+        &:hover {
+            box-shadow: 0px 0px 40px 0px $color-train;
+        }
+    }

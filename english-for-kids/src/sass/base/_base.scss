@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+.cards-container {
+    margin-top: 30px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

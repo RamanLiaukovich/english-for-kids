@@ -1,0 +1,79 @@
+.switcher {
+    height: 40px;
+    width: 120px;
+    background: $color-brand;
+    margin: 40px 10% auto auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.switcher-input {
+    display: none;
+}
+
+.switcher-text {
+    height: 36px;
+    width: 116px;
+    position: absolute;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.switcher-text::before {
+    content: attr(data-on);
+    @extend %font-add;
+    margin: 4px 0 auto 4px;
+    position: absolute;
+    color: $color-tags;
+    @include font(25px, 400);
+} 
+
+.switcher-box {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background:$color-train;
+    top: 44px;
+    right: calc((100% - 1120px) / 2 + 118px);
+    border: $color-tags 1px solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px $color-tags;
+    transition: right 0.3s ease-in;
+    @include media-laptop {
+        right: 10.6%;
+    }
+}
+
+.switcher-box::after {
+    position: absolute;
+    background:red;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,1);
+}
+
+#checkbox:checked~.switcher-text {
+    background: $color-play;
+} 
+
+#checkbox:checked~.switcher-text::before {
+    content: attr(data-off);
+    @extend %font-add;
+    margin: 4px 0 auto 41px;
+    position: absolute;
+    color: $color-tags;
+
+    @include font(25px, 400);
+} 
+
+#checkbox:checked~.switcher-box {
+    right: calc((100% - 1120px) / 2 + 195px);
+    @include media-laptop {
+        right: calc(10.6% + 80px);
+    }
+}
+
+/* main container */
+
+.main-container {
+    width: 100%;
+}
