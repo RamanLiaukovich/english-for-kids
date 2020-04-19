@@ -1,5 +1,5 @@
 #checkbox:checked ~ .switcher-text::before, .switcher-text::before, .menu a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cabin Sketch", "Roboto", sans-serif;
 }
 
 * {
@@ -19,6 +19,40 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+button {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #ffb343;
+  width: 50%;
+  height: 70px;
+  border-radius: 10px;
+  border: 0px solid transparent;
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  position: relative;
+  font-size: 40px;
+  font-weight: 900;
+  color: #5eb5b1;
+  left: calc((100% - 50%) / 2);
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #fff067;
+  box-shadow: 0 0 5px 5px #5eb5b1;
+}
+@media (max-width: 1120px) {
+  button {
+    font-size: 28px;
+  }
+}
+
+.repeat-button {
+  width: 30%;
+  background-color: #fff067;
+  left: calc((100% - 30%) / 2);
+  border-radius: 60px;
 }
 
 .header {
@@ -127,10 +161,10 @@ body {
 
 .switcher-text::before {
   content: attr(data-on);
-  margin: 4px 0 auto 4px;
+  margin: 3px 0 auto 6px;
   position: absolute;
   color: white;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 400;
 }
 
@@ -165,10 +199,10 @@ body {
 
 #checkbox:checked ~ .switcher-text::before {
   content: attr(data-off);
-  margin: 4px 0 auto 41px;
+  margin: 3px 0 auto 47px;
   position: absolute;
   color: white;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 400;
 }
 
@@ -207,6 +241,7 @@ body {
 .card h1 {
   font-family: "Cabin Sketch", "Roboto", cursive;
   margin-top: 10px;
+  color: white;
 }
 
 .play {
@@ -216,7 +251,54 @@ body {
   box-shadow: 0px 0px 40px 0px #fff067;
 }
 
+.categorie-header {
+  width: 90%;
+  height: 30px;
+  margin: 20px auto 0px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.categorie-name {
+  width: fit-content;
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  position: relative;
+  font-size: 30px;
+  font-weight: 900;
+  margin: auto 0;
+  overflow: hidden;
+  color: #5eb5b1;
+}
+@media (max-width: 1120px) {
+  .categorie-name {
+    font-size: 25px;
+  }
+}
+
+.categorie-score {
+  width: 80%;
+}
+@media (max-width: 1120px) {
+  .categorie-score {
+    width: 50%;
+  }
+}
+
 .category-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.front {
   width: 300px;
   height: 200px;
   border-radius: 5px;
@@ -225,9 +307,85 @@ body {
   text-align: center;
   border: 2px solid #fff067;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-.category-card:hover {
+.front:hover {
   box-shadow: 0px 0px 40px -15px #5eb5b1;
+}
+.front img {
+  width: 250px;
+  border: 1px solid #fff067;
+  border-radius: 5px;
+  margin-top: -60px;
+  transition: width 0.5s, margin-top 0.5s;
+}
+.front h1 {
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  position: relative;
+  top: 155px;
+  color: #5eb5b1;
+}
+.front .rotate {
+  background: url(/english-for-kids/src/assets/img/return-arrow-yellow.jpg);
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 7px;
+  left: 251px;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: center 16px;
+  cursor: help;
+}
+.front .rotate:hover {
+  filter: hue-rotate(90deg);
+}
+.front .rotate:active .card-inner {
+  transform: rotateY(180deg);
+}
+
+.play-mode h1 {
+  opacity: 0;
+}
+.play-mode img {
+  width: 100%;
+  margin-top: -39px;
+}
+.play-mode .rotate {
+  display: none;
+}
+
+.back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background: white;
+  margin: 19px 20px;
+  text-align: center;
+  border: 2px solid #fff067;
+  border-radius: 5px;
+  transform: rotateY(180deg);
+}
+.back img {
+  width: 250px;
+  border: 1px solid #fff067;
+  border-radius: 5px;
+  margin-top: -60px;
+}
+.back h1 {
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  position: relative;
+  top: 155px;
+  color: #5eb5b1;
+}
+
+.flipped {
+  transform: rotateY(180deg);
 }
 
 /*# sourceMappingURL=style.css.map */

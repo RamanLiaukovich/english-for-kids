@@ -13,8 +13,9 @@ const cardContainer = document.createElement('ul');
 cardContainer.classList.add('cards-container');
 document.querySelector("body > div").append(cardContainer);
 
+
 // Create Cards
-for (let i = 0; i < 6; i++) {  
+for (let i = 0; i < 8; i++) {  
     const card = document.createElement('li');
     // add card picture and title
     const picture = document.createElement('img');
@@ -33,9 +34,8 @@ for (let i = 0; i < 6; i++) {
 
 // SwitchMode
 document.querySelector('#checkbox').addEventListener('change', (event) => {
-    console.log(document.querySelector('#checkbox').checked);
     if (document.querySelector("#checkbox").checked) {
-    document.querySelectorAll('body > div > ul > li').forEach(element => {
+        document.querySelectorAll('body > div > ul > li').forEach(element => {
         element.classList.add('play');
     });  
     } else {

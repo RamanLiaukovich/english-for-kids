@@ -1,4 +1,47 @@
+.categorie-header {
+    width: 90%;
+    height: 30px;
+    margin: 20px auto 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.categorie-name {
+    width: fit-content;
+    font-family: 'Cabin Sketch', 'Roboto', cursive;
+    position: relative;
+    font-size: 30px;
+    font-weight: 900;
+    margin: auto 0;
+    overflow: hidden;
+    color: $color-brand;
+    @include media-laptop {
+        font-size: 25px;
+    }
+}
+
+.categorie-score {
+    width: 80%;
+    @include media-laptop {
+        width: 50%;
+    }
+}
+
 .category-card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front {
     width: 300px;
     height: 200px;
     border-radius: 5px;
@@ -7,8 +50,103 @@
     text-align: center;
     border: 2px solid $color-train;
     border-radius: 5px;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    // transform: rotateY(180deg);
 
     &:hover {
         box-shadow: 0px 0px 40px -15px $color-brand;
     }
+
+    img {
+        width: 250px;
+        border: 1px solid $color-train;
+        border-radius: 5px;
+        margin-top: -60px;
+        transition: width 0.5s, margin-top 0.5s;
+    }
+
+    h1 {
+        font-family: 'Cabin Sketch', 'Roboto', cursive;
+        position: relative;
+        top: 155px;
+        color: $color-brand;
+    }   
+
+    .rotate {
+        background: url(/english-for-kids/src/assets/img/return-arrow-yellow.jpg);
+        width: 50px;
+        height: 50px;
+        position: relative;
+        bottom: 7px;
+        left: 251px;
+        background-size: 32px;
+        background-repeat: no-repeat;
+        background-position: center 16px;
+        cursor: help;
+        &:hover {
+            filter: hue-rotate(90deg);
+        }
+
+        &:active .card-inner {
+            transform: rotateY(180deg);
+        
+        }
+    }
+    
+    
 }
+
+
+.play-mode {
+
+    
+    h1 {
+        opacity: 0;
+        
+    }
+
+    img {
+        width: 100%;
+        margin-top: -39px;
+    }
+
+    .rotate {
+        display: none;
+    }
+
+}
+
+.back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    background: $color-tags;
+    margin: 19px 20px;
+    text-align: center;
+    border: 2px solid $color-train;
+    border-radius: 5px;
+    transform: rotateY(180deg);
+
+    img {
+        width: 250px;
+        border: 1px solid $color-train;
+        border-radius: 5px;
+        margin-top: -60px;
+    }
+
+    h1 {
+        font-family: 'Cabin Sketch', 'Roboto', cursive;
+        position: relative;
+        top: 155px;
+        color: $color-brand;
+    }
+}
+
+.flipped {
+    transform: rotateY(180deg);
+  }

@@ -22,10 +22,10 @@
 .switcher-text::before {
     content: attr(data-on);
     @extend %font-add;
-    margin: 4px 0 auto 4px;
+    margin: 3px 0 auto 6px;
     position: absolute;
     color: $color-tags;
-    @include font(25px, 400);
+    @include font(27px, 400);
 } 
 
 .switcher-box {
@@ -58,11 +58,11 @@
 #checkbox:checked~.switcher-text::before {
     content: attr(data-off);
     @extend %font-add;
-    margin: 4px 0 auto 41px;
+    margin: 3px 0 auto 47px;
     position: absolute;
     color: $color-tags;
 
-    @include font(25px, 400);
+    @include font(27px, 400);
 } 
 
 #checkbox:checked~.switcher-box {
