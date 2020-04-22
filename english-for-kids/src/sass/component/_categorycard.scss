@@ -22,6 +22,10 @@
 
 .categorie-score {
     width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
     @include media-laptop {
         width: 50%;
     }
@@ -150,3 +154,14 @@
 .flipped {
     transform: rotateY(180deg);
   }
+
+.disable {
+    opacity: 0.5;
+    pointer-events:none;
+    
+    img{
+       border: 5px solid $color-brand; 
+       box-shadow: 0px 0px 10px black;
+    }
+    
+}

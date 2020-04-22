@@ -55,6 +55,38 @@ button:hover {
   border-radius: 60px;
 }
 
+.star-win {
+  width: 50px;
+  height: 50px;
+  background: url(/english-for-kids/src/assets/img/star-win.svg);
+  background-repeat: no-repeat;
+  background-size: 50px;
+  color: #fff067;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.star-lose {
+  width: 50px;
+  height: 50px;
+  background: url(/english-for-kids/src/assets/img/star.svg);
+  background-repeat: no-repeat;
+  background-size: 50px;
+  color: #fff067;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.input-disable:hover::after {
+  content: "Please, finish your game!";
+  top: 43px;
+  position: relative;
+  font-family: "Cabin Sketch", "Roboto", cursive;
+  color: #5eb5b1;
+  display: block;
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -67,6 +99,7 @@ button:hover {
   height: 40px;
   cursor: pointer;
   z-index: 99;
+  left: 130%;
 }
 
 .nav-bar span,
@@ -277,6 +310,10 @@ button:hover {
 
 .categorie-score {
   width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 @media (max-width: 1120px) {
   .categorie-score {
@@ -386,6 +423,15 @@ button:hover {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.disable img {
+  border: 5px solid #5eb5b1;
+  box-shadow: 0px 0px 10px black;
 }
 
 /*# sourceMappingURL=style.css.map */

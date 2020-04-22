@@ -14,6 +14,7 @@ button {
     left: calc((100% - 50%) / 2);
     border: none;
     cursor: pointer;
+
     &:hover {
         background-color: $color-train;
         box-shadow: 0 0 5px 5px $color-brand;
@@ -22,7 +23,7 @@ button {
     @include media-laptop {
         font-size: 28px;
     }
-    
+
 }
 
 .repeat-button {
@@ -30,4 +31,42 @@ button {
     background-color: $color-train;
     left: calc((100% - 30%) / 2);
     border-radius: 60px;
+}
+
+.star-win {
+    width: 50px;
+    height: 50px;
+    background: url(/english-for-kids/src/assets/img/star-win.svg);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    color: $color-train;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.star-lose {
+    width: 50px;
+    height: 50px;
+    background: url(/english-for-kids/src/assets/img/star.svg);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    color: $color-train;
+    position: relative;
+    flex-shrink: 0;
+
+}
+
+.input-disable {
+    &:hover {
+        &::after {
+            content: "Please, finish your game!";
+            top: 43px;
+            position: relative;
+            font-family: 'Cabin Sketch', 'Roboto', cursive;
+            color: $color-brand;
+            display: block;
+            text-align: center;
+        }
+
+    }
 }

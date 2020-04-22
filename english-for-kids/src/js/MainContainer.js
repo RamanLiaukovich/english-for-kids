@@ -27,16 +27,17 @@ for (let i = 0; i < 8; i++) {
     card.append(title);
     
     document.querySelector("body > div > ul").append(card);
+
 }
-
-
 
 
 // SwitchMode
 document.querySelector('#checkbox').addEventListener('change', (event) => {
     if (document.querySelector("#checkbox").checked) {
+        
         document.querySelectorAll('body > div > ul > li').forEach(element => {
         element.classList.add('play');
+        
     });  
     } else {
         document.querySelectorAll('body > div > ul > li').forEach(element => {
@@ -44,7 +45,3 @@ document.querySelector('#checkbox').addEventListener('change', (event) => {
         });  
     } 
 });
-
-
-
-
